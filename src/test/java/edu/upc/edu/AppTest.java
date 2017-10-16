@@ -34,5 +34,10 @@ public class AppTest
     public void testApp()
     {
         assertTrue( true );
+
+        assertTrue(FactorySin.getInstance().getCommand("C1").execute(),1);
+        assertTrue(FactorySin.getInstance().getCommand("C2").execute(),2);
+        assertTrue(FactorySin.getInstance().getCommand("C3").execute(),3);
+        assertTrue(FactorySin.getInstance().getCommand("C1").execute(),1);
     }
 }
