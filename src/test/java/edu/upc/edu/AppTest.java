@@ -1,5 +1,6 @@
 package edu.upc.edu;
 
+import junit.framework.Assert;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -34,10 +35,9 @@ public class AppTest
     public void testApp()
     {
         assertTrue( true );
+        Assert.assertEquals(1,FactorySin.getInstance().getCommand("C1").execute());
+        Assert.assertEquals(2,FactorySin.getInstance().getCommand("C2").execute());
+        Assert.assertEquals(3,FactorySin.getInstance().getCommand("C3").execute());
 
-        assertTrue(FactorySin.getInstance().getCommand("C1").execute(),1);
-        assertTrue(FactorySin.getInstance().getCommand("C2").execute(),2);
-        assertTrue(FactorySin.getInstance().getCommand("C3").execute(),3);
-        assertTrue(FactorySin.getInstance().getCommand("C1").execute(),1);
-    }
+            }
 }

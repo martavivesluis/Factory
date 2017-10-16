@@ -24,11 +24,15 @@ public class FactorySin {
            cache.put(pCommand, cmd);
        }
        return cmd;}
-    private Command loadClass(String pCommand){
-        if ( pCommand == "C1")
+    private Command loadClass(String pCommand)
+    {
+        /*if ( pCommand == "C1")
         {return new C1();}
         if ( pCommand == "C2")
         {return new C2();}
         if ( pCommand == "C3")
         {return new C3();}
-        return null;}}
+         return null;}*/
+        Class d = Class.forName("edu.upc.edu.Command");
+        Command cwd = (Command).newInstance();
+}
