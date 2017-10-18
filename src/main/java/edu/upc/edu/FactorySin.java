@@ -33,6 +33,6 @@ public class FactorySin {
         if ( pCommand == "C3")
         {return new C3();}
          return null;}*/
-        Class d = Class.forName("edu.upc.edu.Command");
+        Class d = Class.forName("edu.upc.edu.Command"); //crear un hashmap per a les noves instancies
         Command cwd = (Command).newInstance();
 }
