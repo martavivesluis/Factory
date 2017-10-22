@@ -8,26 +8,22 @@ public class FactorySin {
 
     private static FactorySin instance = null;//inicialment buit
     HashMap<String, Command> cache;
-
     private FactorySin(){
         cache = new HashMap<String, Command>();//crea una nova instancia
                     } // constructor
-
     public static FactorySin getInstance(){
          if(instance == null)
          {
              instance = new FactorySin();
          }
      return instance;}
-
-     public Command getCommand(String pCommand){
+    public Command getCommand(String pCommand){
        Command cmd = cache.get(pCommand);
        if (cmd == null) {
-           cmd = loadClass(pCommand);//aqui dins tenim un new
+           cmd = loadClass(pCommand);
            cache.put(pCommand, cmd);
        }
        return cmd;}
-
     private Command loadClass(String pCommand){
         if ( pCommand == "C1")
         {return new C1();}
