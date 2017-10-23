@@ -11,6 +11,7 @@ public class FactorySin {
     private FactorySin(){
         cache = new HashMap<String, Command>();//crea una nova instancia
                     } // constructor
+
     public static FactorySin getInstance(){
          if(instance == null)
          {
@@ -26,7 +27,9 @@ public class FactorySin {
        return cmd;}
     private Command loadClass(String pCommand){
         if ( pCommand == "C1")
-        {return new C1();}
+        {
+            return new C1();
+        }
         if ( pCommand == "C2")
         {return new C2();}
         if ( pCommand == "C3")
