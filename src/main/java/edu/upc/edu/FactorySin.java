@@ -21,14 +21,14 @@ public class FactorySin {
      return instance;}
 
      public Command getCommand(String pCommand){
-        log.info(pCommand)
+        //log.info(pCommand)
         Command cmd = cache.get(pCommand);
         if (cmd == null) {
-           log.info("carregador de claesses");
+           //log.info("carregador de classes");
            cmd = loadClass(pCommand);//aqui dins tenim un new
            cache.put(pCommand, cmd);
         }
-       else log.info("command de cache")
+       //else log.info("command de cache")
        return cmd;}
 
     private Command loadClass(String pCommand){
