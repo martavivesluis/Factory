@@ -1,41 +1,44 @@
 package edu.upc.edu;
 
+import org.apache.log4j.Logger;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.lang.reflect.Field;
 
 
 public class App {
-    public static void main(String[] args) {
 
+    final static Logger logger = Logger.getLogger(App.class);
+    public void main(String[] args) {
 
-        System.out.println("-----Metodes:");
+        logger.info("-----Metodes:");
         Class info = FactorySin.class;
         for (Method method : info.getDeclaredMethods()) {
-            System.out.println(method.getName());
+            logger.info(method.getName());
         }
 
-        System.out.println("------ Atributs:");
+        logger.info("------ Atributs:");
 
         for (Field method : info.getDeclaredFields()) {
-            System.out.println(method.getName());
+            logger.info(method.getName());
         }
 
 
-        System.out.println("------ Constructors:");
+        logger.info("------ Constructors:");
         for (Constructor method : info.getConstructors())
         {
-            System.out.println(method.getClass());
+            logger.info(method.getClass());
         }
 
         try {
 
             Method m = info.getDeclaredMethod("getCommand",String.class);
 
-            System.out.println("---Parametres:"+ m.getParameterTypes());
+            logger.info("---Parametres:"+ m.getParameterTypes());
 
         }catch(Exception e){
-            System.out.println("------ Error:");
+            logger.info("------ Error:");
 
         }
 
